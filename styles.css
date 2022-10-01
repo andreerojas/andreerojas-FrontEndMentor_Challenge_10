@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     font-family: 'Space Mono', monospace;
     font-size: 24px;
@@ -7,7 +7,7 @@ body{
     height: 100vh;
 }
 
-main{
+main {
     flex-grow: 1;
     width: 100%;
     box-sizing: border-box;
@@ -19,22 +19,22 @@ main{
     padding: 0;
 }
 
-footer{
+footer {
     flex-grow: 0;
 }
 
-header{
+header {
     color: hsl(183, 100%, 15%);
     text-transform: uppercase;
     margin: 1em;
     flex-grow: 0;
 }
 
-header p{
+header p {
     margin: 0;
 }
 
-section{
+section {
     background-color: white;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
@@ -42,7 +42,7 @@ section{
 }
 
 section,
-.input-container{
+.input-container {
     box-sizing: border-box;
     flex-grow: 1;
     display: flex;
@@ -50,19 +50,19 @@ section,
     justify-content: space-between;
 }
 
-.input-container{
+.input-container {
     box-sizing: border-box;
     padding: 0 0 1em;
 }
 
-.sub-header{
+.sub-header {
     color: hsl(186, 14%, 43%);
     display: inline-block;
     width: 100%;
     font-size: 1rem;
 }
 
-.numeric-container{
+.numeric-container {
     width: 100%;
     box-sizing: border-box;
     padding: 0.5em;
@@ -74,43 +74,48 @@ section,
 }
 
 .numeric-container:focus-within,
-.numeric-container:hover
-{
+.numeric-container:hover {
     border: 2px solid hsl(172, 67%, 45%);
     cursor: grab;
 }
 
-.unit{
+.unit {
     width: 1rem;
     height: 1rem;
     flex: 0 0;
 }
 
-.numeric-input{
+.numeric-input {
     flex-grow: 1;
     background: none;
     color: hsl(184, 14%, 56%);
-    border: none;
     text-align: right;
     font-size: 1em;
-    outline: none;
 }
 
-.numeric-input:hover{
+.numeric-input:hover {
     cursor: grab;
 }
 
 .numeric-input::placeholder{
     color: hsl(184, 14%, 56%);
 }
-.result-container{
+
+
+.numeric-input,
+.custom-tip-input{
+    border: none;
+    outline: none;
+}
+
+.result-container {
     background-color: hsl(183, 100%, 15%);
     border-radius: 0.5em;
     box-sizing: border-box;
     padding: 1em;
 }
 
-.tip-container{
+.tip-container {
     width: 100%;
     box-sizing: border-box;
     display: grid;
@@ -119,16 +124,16 @@ section,
     row-gap: 1em;
 }
 
-.tip-container .sub-header{
+.tip-container .sub-header {
     grid-column: 1 / 3;
 }
 
-.tip-radio-container{
+.tip-radio-container {
     position: relative;
-    
     font-weight: 700;
 }
-.tip-radio-container input[type="radio"]{
+
+.tip-radio-container input[type="radio"] {
     opacity: 0;
     position: absolute;
     width: 100%;
@@ -136,9 +141,10 @@ section,
     left: 0;
     top: 0;
     margin: 0;
+    /* display: none; */
 }
 
-.percentage-box{
+.percentage-box {
     background-color: hsl(183, 100%, 15%);
     position: relative;
     border-radius: 0.2em;
@@ -151,54 +157,51 @@ section,
     height: 100%;
 }
 
-input[type="radio"]:checked + .percentage-box,
-input[type="radio"]:hover + .percentage-box{
-    background-color:hsl(172, 67%, 45%) ;
+.hidden {
+    display: none;
+}
+
+.tip-radio-container input[type="radio"]:checked+.percentage-box,
+.tip-radio-container input[type="radio"]:hover+.percentage-box {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
     cursor: grab;
-    color: hsl(183, 100%, 15%);
-    opacity: 0.9;
 }
 
-#tip-custom:checked + .custom-box,
-#tip-custom:hover + .custom-box{
-    display: none;
+.custom-tip-input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: right;
+    font-size: 0.75em;
+    color: hsl(184, 14%, 56%);
 }
 
-#custom-tip-input{
-    display: none;
+.custom-tip-input::placeholder{
+    text-align: center;    
 }
 
-input[type="radio"]:checked ~ #tip-custom-text-input{
-/* input[type="radio"]:hover ~ #tip-custom-text-input{ */
-    display: inline-block;
-    background: none;
-    border: 2px solid hsl(172, 67%, 45%);
-    color: hsl(183, 100%, 15%);
-}
-
-
-
-
-.hidden{
-    display: none;
-}
-
-@media (min-width:376px){
-    main{
+@media (min-width:376px) {
+    main {
         padding: 7% 15% 10%;
     }
-    section{
+
+    section {
         border-radius: 1em;
         flex-direction: row;
     }
-    .input-container{
+
+    .input-container {
         margin-right: 1em;
     }
 
-    .tip-container{
+    .tip-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .tip-container .sub-header{
+
+    .tip-container .sub-header {
         grid-column: 1 / 4;
     }
 }

@@ -1,16 +1,8 @@
-// const customRadio = document.querySelector('#tip-custom');
+const customTipInput = document.querySelector('#tip-custom-text-input');
 
-// customRadio.addEventListener('input',function(){
-//     const customContainer = customRadio.parentElement;
-    
-//     if(customRadio.checked){
-//         console.log("im checked");
-//         customRadio.nextElementSibling.classList.add('hidden');
-//         customContainer.lastElementChild.classList.remove('hidden');
-//     }
-//     else{
-//         console.log("im unchecked");
-//         customRadio.nextElementSibling.classList.remove('hidden');
-//         customContainer.lastElementChild.classList.add('hidden');
-//     }
-// })
+customTipInput.addEventListener('focus',function(){
+    let radioChecked = document.querySelector('input[type="radio"]:checked');
+    if(radioChecked){
+        radioChecked.checked = false;
+    }
+})
