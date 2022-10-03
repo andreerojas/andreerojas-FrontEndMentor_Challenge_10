@@ -65,19 +65,16 @@
             <div class="percentage-box">50%</div>
           </label>
           <label class="tip-radio-container">
-            <!-- <input type="radio" name="percentage" id="tip-custom" value="custom"> -->
-            <!-- <div class="percentage-box custom-box">Custom</div> -->
-            <input type="text" id="tip-custom-text-input" class="numeric-container custom-tip-input" placeholder="Custom">
+            <input type="text" id="tip-custom-text-input" class="numeric-container custom-tip-input"
+              placeholder="Custom">
           </label>
-          
-          
-          
-          
-          
-          
         </div>
         <div class="people-container">
-          <label class="sub-header" for="people">Number of People</label>
+          <label class="sub-header" for="people">
+            Number of People
+            <span class="error-msg hidden">Can't be zero</span>
+          </label>
+
           <div class="numeric-container">
             <img src="images/icon-person.svg" alt="person icon" class="unit">
             <input type="text" name="people" id="people" class="numeric-input" placeholder="0">
@@ -85,13 +82,14 @@
         </div>
       </div>
       <div class="result-container">
-        Tip Amount
-        / person
+        <span class="result-main-description">Tip Amount</span>
+        <span class="result" id="tip-amount">$ 4.27</span>
+        <span class="result-aux-description">/ person</span>
+        <span class="result-main-description">Total</span>
+        <span class="result" id="total-amount">$ 32.79</span>
+        <span class="result-aux-description">/ person</span>
+        <button class="btn-reset btn-disabled" disabled id="btn-reset">Reset</button>
 
-        Total
-        / person
-
-        Reset
       </div>
 
 
